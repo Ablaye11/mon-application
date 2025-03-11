@@ -1,16 +1,16 @@
 const express = require('express');
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-// Définir le moteur de templates EJS
+// Définir le moteur de vue EJS
 app.set('view engine', 'ejs');
 
-// Route de base
+// Route principale
 app.get('/', (req, res) => {
-    res.render('index', { title: 'Notre Application Node.js' });
+    res.render('index', { title: 'Notre Application' });
 });
 
-// Lancer le serveur
-const PORT = process.env.PORT || 3000;
+// Écoute sur le bon port
 app.listen(PORT, () => {
-    console.log(`Serveur en écoute sur le port ${PORT}`);
+    console.log(`Serveur démarré sur le port ${PORT}`);
 });
